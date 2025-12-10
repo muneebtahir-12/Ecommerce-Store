@@ -1,0 +1,537 @@
+{
+    "services": [
+        {
+            "id": 1,
+            "title": "Free Shipping",
+            "description": "Free shipping with discount",
+            "image": "/shipping.png"
+        },
+        {
+            "id": 2,
+            "title": "Great support 24/7",
+            "description": "Instant access to Contact",
+            "image": "/headphones.png"
+        },
+        {
+            "id": 3,
+            "title": "100% secure Payment",
+            "description": "We ensure your money is save.",
+            "image": "/shopping-bag.png"
+        },
+        {
+            "id": 4,
+            "title": "Money Back Guarantee",
+            "description": "30 days money back guarantee",
+            "image": "/package.png"
+        }
+    ],
+    "categories": [
+        {
+            "id": 5,
+            "name": "Fresh Fruits",
+            "image": "/category 1.png"
+        },
+        {
+            "id": 6,
+            "name": "Fresh Vegetables",
+            "image": "/category 2.png"
+        },
+        {
+            "id": 7,
+            "name": "Meat & Fish",
+            "image": "/category 3.png"
+        },
+        {
+            "id": 8,
+            "name": "Beverages",
+            "image": "/category 4.png"
+        },
+        {
+            "id": 9,
+            "name": "Snacks",
+            "image": "/category 5.png"
+        },
+        {
+            "id": 10,
+            "name": "Beauty & Health",
+            "image": "/category 6.png"
+        },
+        {
+            "id": 11,
+            "name": "Bakery & Dairy",
+            "image": "/category 7.png"
+        },
+        {
+            "id": 12,
+            "name": "Baking Needs",
+            "image": "/category 8.png"
+        },
+        {
+            "id": 13,
+            "name": "Cooking",
+            "image": "/category 9.png"
+        },
+        {
+            "id": 14,
+            "name": "Diabetic Foods",
+            "image": "/category 10.png"
+        },
+        {
+            "id": 15,
+            "name": "Dish Detergents",
+            "image": "/category 11.png"
+        },
+        {
+            "id": 16,
+            "name": "Oils",
+            "image": "/category 10.png"
+        }
+    ],
+    "products": [
+        {
+            "id": 17,
+            "name": "Chanise Cabbage",
+            "price": "$10",
+            "image": "/product1.png"
+        },
+        {
+            "id": 18,
+            "name": "Green Lettuce",
+            "price": "$12",
+            "image": "/product2.png"
+        },
+        {
+            "id": 19,
+            "name": "Green Chili",
+            "price": "$14",
+            "image": "/product3.png"
+        },
+        {
+            "id": 20,
+            "name": "Corn",
+            "price": "$6",
+            "image": "/product4.png"
+        }
+    ],
+    "team": [
+        {
+            "id": 21,
+            "name": "John Doe",
+            "position": "CEO",
+            "image": "/mem1.png"
+        },
+        {
+            "id": 22,
+            "name": "Sarah Smith",
+            "position": "CTO",
+            "image": "/mem2.png"
+        },
+        {
+            "id": 23,
+            "name": "Mike Johnson",
+            "position": "CFO",
+            "image": "/mem3.png"
+        },
+        {
+            "id": 24,
+            "name": "Mike Johnson",
+            "position": "CFO",
+            "image": "/mem4.png"
+        }
+    ],
+    "reviews": [
+        {
+            "id": 25,
+            "name": "Alice Brown",
+            "review": "Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna dictum, bibendum cursus velit sodales. Donec sed neque eget",
+            "image": "/client1.png"
+        },
+        {
+            "id": 26,
+            "name": "David Wilson",
+            "review": "Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna dictum, bibendum cursus velit sodales. Donec sed neque eget",
+            "image": "/client2.png"
+        },
+        {
+            "id": 27,
+            "name": "Emma Davis",
+            "review": "Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna dictum, bibendum cursus velit sodales. Donec sed neque eget",
+            "image": "/client3.png"
+        }
+    ],
+    "organicFoodServices": [
+        {
+            "id": 28,
+            "title": "100% Organic food",
+            "description": "100% healthy & Fresh food.",
+            "image": "/about0.1.png"
+        },
+        {
+            "id": 29,
+            "title": "Great Support 24/7",
+            "description": "Instant access to Contact",
+            "image": "/about0.2.png"
+        },
+        {
+            "id": 30,
+            "title": "Natural Vegetables",
+            "description": "Grown without synthetic pesticides.",
+            "image": "/about0.3.png"
+        },
+        {
+            "id": 31,
+            "title": "Organic Fruits",
+            "description": "Picked at the peak of ripeness.",
+            "image": "/about0.4.png"
+        },
+        {
+            "id": 32,
+            "title": "Healthy Snacks",
+            "description": "Nutritious and delicious options.",
+            "image": "/about0.5.png"
+        },
+        {
+            "id": 33,
+            "title": "Eco-friendly Packaging",
+            "description": "Sustainable and biodegradable materials.",
+            "image": "/about0.6.png"
+        }
+    ],
+    "specialproducts": [
+        {
+            "id": 34,
+            "name": "Organic Apples",
+            "price": "$15",
+            "image": "/s1.png"
+        },
+        {
+            "id": 35,
+            "name": "Fresh Carrots",
+            "price": "$8",
+            "image": "/s2.png"
+        },
+        {
+            "id": 36,
+            "name": "Almond Milk",
+            "price": "$12",
+            "image": "/s3.png"
+        },
+        {
+            "id": 37,
+            "name": "Quinoa",
+            "price": "$20",
+            "image": "/s4.png"
+        },
+        {
+            "id": 38,
+            "name": "Chia Seeds",
+            "price": "$10",
+            "image": "/s5.png"
+        },
+        {
+            "id": 39,
+            "name": "Kale",
+            "price": "$9",
+            "image": "/s6.png"
+        },
+        {
+            "id": 40,
+            "name": "Avocado",
+            "price": "$14",
+            "image": "/s7.png"
+        },
+        {
+            "id": 41,
+            "name": "Brown Rice",
+            "price": "$18",
+            "image": "/s8.png"
+        },
+        {
+            "id": 42,
+            "name": "Greek Yogurt",
+            "price": "$11",
+            "image": "/s9.png"
+        }
+    ],
+    "blogs": [
+        {
+            "id": 43,
+            "description": "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum.",
+            "image": "/blog1.png"
+        },
+        {
+            "id": 44,
+            "description": "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum.",
+            "image": "/blog3.png"
+        },
+        {
+            "id": 45,
+            "description": "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum.",
+            "image": "/blog4.png"
+        },
+        {
+            "id": 46,
+            "description": "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum.",
+            "image": "/blog5.png"
+        },
+        {
+            "id": 47,
+            "description": "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum.",
+            "image": "/blog6.png"
+        },
+        {
+            "id": 48,
+            "description": "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum.",
+            "image": "/blog7.png"
+        },
+        {
+            "id": 49,
+            "description": "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum.",
+            "image": "/blog8.png"
+        },
+        {
+            "id": 50,
+            "description": "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum.",
+            "image": "/blog9.png"
+        },
+        {
+            "id": 51,
+            "description": "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum.",
+            "image": "/blog10.png"
+        },
+        {
+            "id": 52,
+            "description": "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum.",
+            "image": "/blog2.png"
+        }
+    ],
+    "recentlyadded": [
+        {
+            "id": 53,
+            "image": "/blog1.png",
+            "des": "Curabitur porttitor orci eget nequ accumsan.",
+            "date": "Apr 25, 2021"
+        },
+        {
+            "id": 54,
+            "image": "/blog2.png",
+            "des": "Donec mattis arcu faucibus suscipit viverra.",
+            "date": "Apr 26, 2021"
+        },
+        {
+            "id": 55,
+            "image": "/blog4.png",
+            "des": "Quisque posuere tempus rutrum. Integer velit ex.",
+            "date": "Apr 29, 2021"
+        }
+    ],
+    "comments": [
+        {
+            "id": 1,
+            "name": "Annette Black",
+            "date": "26 Apr, 2021",
+            "avatar": "/client1.png",
+            "text": "In a nisi commodo, porttitor ligula consequat, tincidunt dui. Nulla volutpat, metus eu aliquam malesuada, elit libero venenatis urna, consequat maximus arcu diam non diam."
+        },
+        {
+            "id": 2,
+            "name": "Devon Lane",
+            "date": "24 Apr, 2021",
+            "avatar": "/client2.png",
+            "text": "Quisque eget tortor lobortis, facilisis metus eu, elementum est. Nunc sit amet erat quis ex convallis suscipit. Nam hendrerit, velit ut aliquam euismod, nibh tortor rutrum nisi..."
+        },
+        {
+            "id": 3,
+            "name": "Jacob Jones",
+            "date": "20 Apr, 2021",
+            "avatar": "/client1.png",
+            "text": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae."
+        },
+        {
+            "id": 4,
+            "name": "Jane Cooper",
+            "date": "18 Apr, 2021",
+            "avatar": "/client3.png",
+            "text": "Pellentesque feugiat, nibh vel vehicula pretium, nibh nibh bibendum elit, a volutpat arcu dui nec orci. Aenean dui odio, ullamcorper quis turpis ac, volutpat imperdiet ex."
+        },
+        {
+            "id": 5,
+            "name": "Darrell Steward",
+            "date": "7 Apr, 2021",
+            "avatar": "/client1.png",
+            "text": "Nulla molestie interdum ultricies."
+        }
+    ],
+    "types": [
+        {
+            "id": 56,
+            "name": "Fresh Fruit",
+            "image": "/apple.png",
+            "count": "134"
+        },
+        {
+            "id": 57,
+            "name": "Vegetables",
+            "image": "/meat.png",
+            "count": "134"
+        },
+        {
+            "id": 58,
+            "name": "River Fish",
+            "image": "/fish.png",
+            "count": "134"
+        },
+        {
+            "id": 59,
+            "name": "Chicken and Meat",
+            "image": "/meat.png",
+            "count": "134"
+        },
+        {
+            "id": 60,
+            "name": "Drink and Water",
+            "image": "/coffee.png",
+            "count": "134"
+        },
+        {
+            "id": 61,
+            "name": "Yogurt and Hearb",
+            "image": "/ice-cream 1.png",
+            "count": "134"
+        },
+        {
+            "id": 62,
+            "name": "Cake and Bread",
+            "image": "/cream.png",
+            "count": "134"
+        },
+        {
+            "id": 63,
+            "name": "Butter and Cream",
+            "image": "/cooking.png",
+            "count": "134"
+        },
+        {
+            "id": 64,
+            "name": "Cooking",
+            "image": "/cooking.png",
+            "count": "134"
+        }
+    ],
+    "prd":[
+        {
+            "id":73,
+            "name":"Red Capsicum",
+            "price":"$32.00",
+            "discount":"23.23",
+            "image":"/pr1.png"
+        },{
+            "id":74,
+            "name":"Chanise Cabbage",
+            "price":"$26.00",
+            "discount":"23.23",
+            "image":"/pr2.png"
+        },{
+            "id":75,
+            "name":"Green Capsicum",
+            "price":"$34.00",
+            "discount":"21.23",
+            "image":"/pr3.png"
+        }
+    ],
+    "details":[
+        {
+            "id":76,
+            "name":"Big Potatos",
+            "price":"$12.32",
+            "image":"/potato.png",
+            "catsName": ["Vegetables", "Cooking"]
+        },{
+            "id":77,
+            "name":"Chanise Cabbage",
+            "price":"$122.32",
+            "image":"/cabbage.png",
+            "catsName": ["Vegetables", "Cooking"]
+
+        },{
+            "id":78,
+            "name":"Ladies Finger",
+            "price":"$11.32",
+            "image":"/ladiesfinger.png",
+            "catsName": ["Vegetables", "Cooking"]
+
+        },{
+            "id":79,
+            "name":"Eggplant",
+            "price":"$16.32",
+            "image":"/eggplant.png",
+            "catsName": ["Vegetables", "Cooking"]
+        },{
+            "id":80,
+            "name":"Fresh Cauliflower",
+            "price":"$25.32",
+            "image":"/caucliflower.png",
+            "catsName": ["Vegetables", "Cooking"]
+        },{
+            "id":81,
+            "name":"Green Apple",
+            "price":"$62.32",
+            "image":"/greenapple.png",
+            "catsName":"Fresh Fruit"
+        },{
+            "id":82,
+            "name":"Green Capsicum",
+            "price":"$52.32",
+            "image":"/capsicum.png",
+            "catsName": ["Vegetables", "Cooking"]
+        },{
+            "id":83,
+            "name":"Green Chili",
+            "price":"$12.32",
+            "image":"/greenchili.png",
+            "catsName":"Vegetables"
+        },{
+            "id":84,
+            "name":"Green Cucumber",
+            "price":"$92.32",
+            "image":"/cucumber.png",
+            "catsName": ["Vegetables", "Cooking"]
+        },{
+            "id":85,
+            "name":"Green Littuce",
+            "price":"$22.32",
+            "image":"/littuce.png",
+            "catsName": ["Vegetables", "Cooking"]
+        },{
+            "id":86,
+            "name":"Ladies Finger",
+            "price":"$46.32",
+            "image":"/ladyfinger.png",
+            "catsName": ["Vegetables", "Cooking"]
+        },{
+            "id":87,
+            "name":"Green Capsicum",
+            "price":"$13.32",
+            "image":"/capsicum.png",
+           "catsName": ["Vegetables", "cooking"]
+        },{
+            "id":88,
+            "name":"Red Chili",
+            "price":"$89.32",
+            "image":"/redchili.png",
+            "catsName":"Vegetables"
+        },{
+            "id":89,
+            "name":"Red Tomato",
+            "price":"$10.32",
+            "image":"/tomato.png",
+            "catsName":"Fresh Fruit"
+        },{
+            "id":90,
+            "name":"Fresh Mango",
+            "price":"$1.32",
+            "image":"/mango.png",
+            "catsName":"Fresh Fruit"
+        }
+    ]
+}
