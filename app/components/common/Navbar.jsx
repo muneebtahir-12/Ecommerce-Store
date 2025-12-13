@@ -1,11 +1,12 @@
 "use client";
-import { useState } from "react";
+import { useState,useContext } from "react";
 import Link from "next/link";
-
+import { CounterContext } from "../../context/CounterContext";
 export default function Home() {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleMenu = () => setIsOpen(!isOpen);
+    const { count } = useContext(CounterContext);
 
     return (
         <>
@@ -61,7 +62,7 @@ export default function Home() {
                         <div className="flex items-center gap-1">
                             <Link href={"/cart"} className="relative w-fit">
                                 <img src="/Bag2.png" alt="cart" className="w-[30px] h-[30px] md:w-[34px] md:h-[34px]" />
-                                <span className="absolute -top-1 -right-1 bg-[#00B207] text-white text-[10px] w-[18px] h-[18px] flex items-center justify-center rounded-full font-semibold">1</span>
+                                <span className="absolute -top-1 -right-1 bg-[#00B207] text-white text-[10px] w-[18px] h-[18px] flex items-center justify-center rounded-full font-semibold">{count}</span>
                             </Link>
                         </div>
                     </div>
@@ -75,8 +76,6 @@ export default function Home() {
                     <div className="hidden lg:flex mt-3 px-29 justify-between">
                         <ul className="flex gap-7 items-center">
                             <Link href={"/"} className="text-[#666] font-medium font-poppins hover:text-[#00B207]">Home</Link>
-                            <Link href={"/shop"} className="text-[#666] font-medium font-poppins hover:text-[#00B207]">Shop</Link>
-                            <Link href={"/pages"} className="text-[#666] font-medium font-poppins hover:text-[#00B207]">Pages</Link>
                             <Link href={"/blog"} className="text-[#666] font-medium font-poppins hover:text-[#00B207]">Blog</Link>
                             <Link href={"/about"} className="text-[#666] font-medium font-poppins hover:text-[#00B207]">About Us</Link>
                             <Link href={"/contact"} className="text-[#666] font-medium font-poppins hover:text-[#00B207]">Contact</Link>
@@ -92,8 +91,6 @@ export default function Home() {
                         <div className="absolute top-0 left-0 w-full bg-white z-[100] lg:hidden shadow-xl animate-in slide-in-from-top duration-300 border-t">
                             <ul className="flex flex-col items-center gap-6 py-10 px-5 text-center">
                                 <Link onClick={toggleMenu} href={"/"} className="text-[#1A1A1A] text-lg font-medium font-poppins">Home</Link>
-                                <Link onClick={toggleMenu} href={"/shop"} className="text-[#1A1A1A] text-lg font-medium font-poppins">Shop</Link>
-                                <Link onClick={toggleMenu} href={"/pages"} className="text-[#1A1A1A] text-lg font-medium font-poppins">Pages</Link>
                                 <Link onClick={toggleMenu} href={"/blog"} className="text-[#1A1A1A] text-lg font-medium font-poppins">Blog</Link>
                                 <Link onClick={toggleMenu} href={"/about"} className="text-[#1A1A1A] text-lg font-medium font-poppins">About Us</Link>
                                 <Link onClick={toggleMenu} href={"/contact"} className="text-[#1A1A1A] text-lg font-medium font-poppins">Contact</Link>

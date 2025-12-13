@@ -2,10 +2,16 @@
 import { useContext } from "react";
 import { useRouter } from "next/navigation";
 import { CartContext } from "../context/CartContext";
-
+import Link from "next/link";
+import { CounterContext } from "../context/CounterContext";
 export default function Cart() {
   const router = useRouter();
-  const { cartItems, removeFromCart, updateQuantity } = useContext(CartContext);
+  const { cartItems, removeFromCart, updateQuantity, clearCart } = useContext(CartContext);
+  const {decrement,resetCount} = useContext(CounterContext);
+  const handleClearCart = () => {
+  clearCart();   // empty cart
+  resetCount();  // reset count to 0
+};
 
   // Calculate subtotal with price as number
   const subtotal = cartItems.reduce(
@@ -22,7 +28,7 @@ export default function Cart() {
   };
 
   return (
-    <div className="mx-5 lg:mx-28">
+    <div className="mx-5 lg:mx-29 mb-15">
       {/* Heading */}
       <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12">My Shopping Cart</h2>
 
@@ -63,23 +69,22 @@ export default function Cart() {
                       <span className="px-1.5 sm:px-3 text-[13px] sm:text-sm">{item.quantity}</span>
                       <button
                         onClick={() => handleIncrement(item.id, item.quantity)}
-                        className="bg-[#F2F2F2] w-7 h-6 sm:w-8 sm:h-8 text-[10px] sm:text-[15px] rounded-full"
-                      >
+                        className="bg-[#F2F2F2] w-7 h-6 sm:w-8 sm:h-8 text-[10px] sm:text-[15px] rounded-full">
                         +
                       </button>
                     </div>
                   </div>
 
-                  <div className="flex flex-col items-end">
+                  <div className="flex flex-col lg:flex-row lg:justify-end lg:gap-2  items-end">
                     <p className="text-right text-gray-900 text-sm sm:text-base">
                       ${(Number(item.price) * item.quantity).toFixed(2)}
                     </p>
-                    <button
-                      onClick={() => removeFromCart(item.id)}
-                      className="text-red-500 text-xs sm:text-sm mt-1 hover:underline"
-                    >
-                      Remove
-                    </button>
+                    <div className="p-1 rounded-full border-1 border-[#E6E6E6] w-[24px] h-[24px] flex items-center justify-center cursor-pointer hover:bg-gray-200 mt-2">
+                      <button onClick={() => {
+                        decrement();
+                        removeFromCart(item.id)
+                      }}>x</button>
+                    </div>
                   </div>
                 </div>
               ))
@@ -89,11 +94,11 @@ export default function Cart() {
             <div className="flex flex-col sm:flex-row items-center justify-between px-3 sm:px-4 mt-4 sm:mt-6 mb-4 gap-3 sm:gap-0">
               <button
                 onClick={() => router.back()} // Go back to previous page
-                className="w-full sm:w-auto text-[#4D4D4D] font-poppins text-[14px] font-semibold leading-[120%] bg-gray-200 px-4 py-3 rounded-full"
-              >
+                className="w-full sm:w-auto text-[#4D4D4D] font-poppins text-[14px] font-semibold leading-[120%] bg-gray-200 px-4 py-3 rounded-full">
                 Return to shop
               </button>
-              <button className="w-full sm:w-auto bg-gray-200 px-4 py-3 rounded-full text-[#4D4D4D] font-poppins text-[14px] font-semibold leading-[120%]">
+              <button onClick={handleClearCart
+              } className="w-full sm:w-auto bg-gray-200 px-4 py-3 rounded-full text-[#4D4D4D] font-poppins text-[14px] font-semibold leading-[120%]">
                 Update Cart
               </button>
             </div>
@@ -105,8 +110,7 @@ export default function Cart() {
             <input
               type="text"
               placeholder="Enter code"
-              className="flex-1 w-full px-4 py-3 text-sm outline-none focus:outline-none focus:ring-0 focus:border-[#E6E6E6] border border-[#E6E6E6] rounded-[50px]"
-            />
+              className="flex-1 w-full px-4 py-3 text-sm outline-none focus:outline-none focus:ring-0 focus:border-[#E6E6E6] border border-[#E6E6E6] rounded-[50px]" />
             <button className="bg-black rounded-[50px] text-white px-6 py-3 text-sm w-full sm:w-auto">
               Apply Coupon
             </button>
@@ -131,12 +135,13 @@ export default function Cart() {
             <span>Total</span>
             <span>${subtotal.toFixed(2)}</span>
           </div>
-
-          <button className="w-full bg-[#00B207] hover:bg-green-700 transition text-white py-3 mt-2 rounded-full font-medium text-sm sm:text-base">
-            Proceed to checkout
-          </button>
-        </div>
-      </div>
+          <Link href={`/cart/checkout`}>
+        <button className="w-full bg-[#00B207] hover:bg-green-700 transition text-white py-3 mt-2 rounded-full font-medium text-sm sm:text-base">
+          Proceed to checkout
+        </button>
+      </Link>
     </div>
+      </div >
+    </div >
   );
 }

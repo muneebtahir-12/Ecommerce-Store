@@ -1,14 +1,14 @@
 "use client"; // Required for useState in Next.js App Router
-import { useState } from "react";
+import { useState,useContext } from "react";
 import Link from "next/link";
-
+import { CounterContext } from "../../context/CounterContext";
 export default function Home() {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
-
+const {count}=useContext(CounterContext);
     return (
         <>
             <div className="flex flex-col mt-6 sm:ml-9 gap-2 ml-5 mr-5 sm:mr-9">
@@ -76,8 +76,7 @@ export default function Home() {
                     <div className="bg-[black] lg:flex items-center justify-between hidden w-full px-5 py-3">
                         <ul className="flex gap-10 text-white font-poppins">
                             <Link href="/">Home</Link>
-                            <li>Shop</li>
-                            <Link href="/">Pages</Link>
+                           
                             <Link href="/blog">Blog</Link>
                             <Link href="/about">About</Link>
                             <Link href="/contact">Contact</Link>
@@ -88,7 +87,7 @@ export default function Home() {
                             </Link>
                             <Link href={"/cart"} className="relative w-fit">
                                 <img src="/Bag.png" alt="cart" className="w-[29px] h-[29px]" />
-                                <span className="absolute -top-1 -right-1 bg-[#00B207] text-white text-[10px] w-[18px] h-[18px] flex items-center justify-center rounded-full font-semibold">1</span>
+                                <span className="absolute -top-1 -right-1 bg-[#00B207] text-white text-[10px] w-[18px] h-[18px] flex items-center justify-center rounded-full font-semibold">{count}</span>
                             </Link>
                             <img className="w-[29px] h-[29px] cursor-pointer" src="/User.png" alt="User" />
                         </div>
@@ -100,8 +99,7 @@ export default function Home() {
                             <ul className="flex flex-col items-center text-center text-white font-poppins px-6 py-8 gap-6">
                                 {/* Nav Links */}
                                 <Link onClick={toggleMenu} href="/" className="w-full hover:text-[#00B207] transition-colors text-lg">Home</Link>
-                                <li className="w-full cursor-pointer hover:text-[#00B207] transition-colors text-lg">Shop</li>
-                                <Link onClick={toggleMenu} href="/" className="w-full hover:text-[#00B207] transition-colors text-lg">Pages</Link>
+                               
                                 <Link onClick={toggleMenu} href="/blog" className="w-full hover:text-[#00B207] transition-colors text-lg">Blog</Link>
                                 <Link onClick={toggleMenu} href="/about" className="w-full hover:text-[#00B207] transition-colors text-lg">About</Link>
                                 <Link onClick={toggleMenu} href="/contact" className="w-full hover:text-[#00B207] transition-colors text-lg">Contact</Link>

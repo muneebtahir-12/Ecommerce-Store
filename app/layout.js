@@ -2,7 +2,8 @@
 
 import "./globals.css";
 import WishlistProvider from "./context/WishlistContext";
-import { CartProvider } from "./context/CartContext"; // make sure you import CartProvider
+import { CartProvider } from "./context/CartContext";
+import CounterProvider from "./context/CounterContext";
 
 export default function RootLayout({ children }) {
   return (
@@ -10,7 +11,11 @@ export default function RootLayout({ children }) {
       <body>
         <WishlistProvider>
           <CartProvider>
-            {children}
+            <CounterProvider>
+
+              {children} 
+
+            </CounterProvider>
           </CartProvider>
         </WishlistProvider>
       </body>

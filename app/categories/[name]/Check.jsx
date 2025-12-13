@@ -4,7 +4,6 @@ export default function Check({product}) {
         
         
         <section className="flex flex-col lg:flex-row justify-between items-center">
-<div>{product.name}</div>
             <div className="flex lg:flex-col flex-wrap">
                 <img src="/cabbage.png" alt="" className="w-[80px] h-[90px]" />
                 <img src="/cabbage2.png" alt="" className="w-[80px] h-[90px]" />

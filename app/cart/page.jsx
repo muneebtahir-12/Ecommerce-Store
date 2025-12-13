@@ -8,6 +8,7 @@ export default function Cart(){
         <Navbar/>
         <Top category={{name:"Shopping Cart"}}/>
         <CartItems/>
+        <Footer/>
         </>
     )
 }
