@@ -1,8 +1,49 @@
 import Link from "next/link"
-export default function Check({product}) {
+import { useContext, useState, useEffect } from "react"
+import { CartContext } from "../../context/CartContext"
+import { WishlistContext } from "../../context/WishlistContext"
+import { CounterContext } from "../../context/CounterContext"
+export default function Check({ product }) {
+    const { cartItems, addToCart, removeFromCart } = useContext(CartContext);
+    const { wishlist, addToWishlist, removeWishlistItem } = useContext(WishlistContext);
+    const { increment, decrement } = useContext(CounterContext);
+
+    const isInCart = cartItems.some((item) => item.id === product.id);
+    const isInWishlist = wishlist.some((item) => item.id === product.id);
+
+    const [counter,setCounter]=useState(1);
+    const Increment = () => {
+        setCounter(counter + 1);
+    }
+    const Decrement = () => {
+        if (counter > 0) {
+            setCounter(counter - 1);
+        }
+    }
+
+
+    // 🛒 Cart handler
+    const handleCartClick = () => {
+        if (isInCart) {
+            removeFromCart(product.id); // ✅ CORRECT
+            decrement();
+        } else {
+            addToCart(product);
+            increment();
+        }
+    };
+
+
+    // ❤️ Wishlist handler
+    const handleWishlistClick = () => {
+        if (isInWishlist) {
+            removeWishlistItem(product.id);
+        } else {
+            addToWishlist(product);
+        }
+    };
+
     return (
-        
-        
         <section className="flex flex-col lg:flex-row justify-between items-center">
             <div className="flex lg:flex-col flex-wrap">
                 <img src="/cabbage.png" alt="" className="w-[80px] h-[90px]" />
@@ -68,23 +109,28 @@ export default function Check({product}) {
 
                 <div className="flex justify-between flex-col sm:flex-row items-center gap-5">
                     <div className="flex items-center justify-evenly py-2 w-[180px] rounded-[170px] border border-[#E6E6E6] bg-[#FFFFFF]">
-                        <p className="w-[34px] h-[34px] text-[23px] bg-[#F2F2F2] p-3 rounded-full flex items-center justify-center">-</p>
-                        <span className="text-[#1A1A1A] text-center font-poppins text-[16px] font-normal leading-[150%]">0</span>
-                        <p className="w-[34px] h-[34px] text-[23px] bg-[#F2F2F2] p-3 rounded-full flex items-center justify-center">+</p>
+                        <p onClick={Decrement} className="w-[34px] h-[34px] text-[23px] bg-[#F2F2F2] p-3 rounded-full flex items-center justify-center">-</p>
+                        <span className="text-[#1A1A1A] text-center font-poppins text-[16px] font-normal leading-[150%]">{counter}</span>
+                        <p onClick={Increment} className="w-[34px] h-[34px] text-[23px] bg-[#F2F2F2] p-3 rounded-full flex items-center justify-center">+</p>
                     </div>
 
-                    <div className="flex sm:w-[368px] px-[40px] py-[16px] justify-center items-center gap-[16px] rounded-[43px] bg-[#00B207]" >
+                    <div onClick={handleCartClick} className="flex sm:w-[368px] px-[40px] py-[16px] justify-center items-center gap-[16px] rounded-[43px] bg-[#00B207]" >
                         <p className="text-[#FFFFFF] font-poppins text-[16px] font-semibold leading-[120%]">Add to cart</p>
                         <img src="/Bag.png" alt="" className="w-[18px] h-[18px]" />
                     </div>
 
-                    <div className="p-[16px] flex items-center bg-[#20B5261A] rounded-full">
-                        <img src="/whishlist.png" alt=""  className="w-[20px] h-[20px]" />
-                    </div>
+                    <button
+                        onClick={handleWishlistClick}
+                        className={`p-2 rounded-full border ${isInWishlist
+                            ? "bg-red-500 border-red-500"
+                            : "border-[#F2F2F2] hover:bg-red-500"
+                            }`}>
+                        <img src="/whishlist.png" className="w-[16px] h-[16px]" />
+                    </button>
                 </div>
 
                 <hr className="border-t border-[#F2F2F2]" />
-                
+
                 <p className="text-[#1A1A1A] font-poppins text-[14px] font-semibold leading-[150%]">Category: <span className="text-[#808080] font-medium">{product.catName}</span></p>
                 <p className="text-[#1A1A1A] font-poppins text-[14px] font-semibold leading-[150%]">Tag : <span className="text-[#808080] font-medium"> Vegetables Healthy  {product.name} </span></p>
             </div>

@@ -418,120 +418,202 @@
             "count": "134"
         }
     ],
-    "prd":[
+    "prd": [
         {
-            "id":73,
-            "name":"Red Capsicum",
-            "price":"$32.00",
-            "discount":"23.23",
-            "image":"/pr1.png"
-        },{
-            "id":74,
-            "name":"Chanise Cabbage",
-            "price":"$26.00",
-            "discount":"23.23",
-            "image":"/pr2.png"
-        },{
-            "id":75,
-            "name":"Green Capsicum",
-            "price":"$34.00",
-            "discount":"21.23",
-            "image":"/pr3.png"
+            "id": 73,
+            "name": "Red Capsicum",
+            "price": "$32.00",
+            "discount": "23.23",
+            "image": "/pr1.png"
+        },
+        {
+            "id": 74,
+            "name": "Chanise Cabbage",
+            "price": "$26.00",
+            "discount": "23.23",
+            "image": "/pr2.png"
+        },
+        {
+            "id": 75,
+            "name": "Green Capsicum",
+            "price": "$34.00",
+            "discount": "21.23",
+            "image": "/pr3.png"
         }
     ],
-    "details":[
+    "details": [
         {
-            "id":76,
-            "name":"Big Potatos",
-            "price":"$12.32",
-            "image":"/potato.png",
-            "catsName": ["Vegetables", "Cooking"]
-        },{
-            "id":77,
-            "name":"Chanise Cabbage",
-            "price":"$122.32",
-            "image":"/cabbage.png",
-            "catsName": ["Vegetables", "Cooking"]
-
-        },{
-            "id":78,
-            "name":"Ladies Finger",
-            "price":"$11.32",
-            "image":"/ladiesfinger.png",
-            "catsName": ["Vegetables", "Cooking"]
-
-        },{
-            "id":79,
-            "name":"Eggplant",
-            "price":"$16.32",
-            "image":"/eggplant.png",
-            "catsName": ["Vegetables", "Cooking"]
-        },{
-            "id":80,
-            "name":"Fresh Cauliflower",
-            "price":"$25.32",
-            "image":"/caucliflower.png",
-            "catsName": ["Vegetables", "Cooking"]
-        },{
-            "id":81,
-            "name":"Green Apple",
-            "price":"$62.32",
-            "image":"/greenapple.png",
-            "catsName":"Fresh Fruit"
-        },{
-            "id":82,
-            "name":"Green Capsicum",
-            "price":"$52.32",
-            "image":"/capsicum.png",
-            "catsName": ["Vegetables", "Cooking"]
-        },{
-            "id":83,
-            "name":"Green Chili",
-            "price":"$12.32",
-            "image":"/greenchili.png",
-            "catsName":"Vegetables"
-        },{
-            "id":84,
-            "name":"Green Cucumber",
-            "price":"$92.32",
-            "image":"/cucumber.png",
-            "catsName": ["Vegetables", "Cooking"]
-        },{
-            "id":85,
-            "name":"Green Littuce",
-            "price":"$22.32",
-            "image":"/littuce.png",
-            "catsName": ["Vegetables", "Cooking"]
-        },{
-            "id":86,
-            "name":"Ladies Finger",
-            "price":"$46.32",
-            "image":"/ladyfinger.png",
-            "catsName": ["Vegetables", "Cooking"]
-        },{
-            "id":87,
-            "name":"Green Capsicum",
-            "price":"$13.32",
-            "image":"/capsicum.png",
-           "catsName": ["Vegetables", "cooking"]
-        },{
-            "id":88,
-            "name":"Red Chili",
-            "price":"$89.32",
-            "image":"/redchili.png",
-            "catsName":"Vegetables"
-        },{
-            "id":89,
-            "name":"Red Tomato",
-            "price":"$10.32",
-            "image":"/tomato.png",
-            "catsName":"Fresh Fruit"
-        },{
-            "id":90,
-            "name":"Fresh Mango",
-            "price":"$1.32",
-            "image":"/mango.png",
-            "catsName":"Fresh Fruit"
+            "id": 76,
+            "name": "Big Potatos",
+            "price": "$12.32",
+            "image": "/potato.png",
+            "catsName": [
+                "Vegetables",
+                "Cooking"
+            ]
+        },
+        {
+            "id": 77,
+            "name": "Chanise Cabbage",
+            "price": "$122.32",
+            "image": "/cabbage.png",
+            "catsName": [
+                "Vegetables",
+                "Cooking"
+            ]
+        },
+        {
+            "id": 78,
+            "name": "Ladies Finger",
+            "price": "$11.32",
+            "image": "/ladiesfinger.png",
+            "catsName": [
+                "Vegetables",
+                "Cooking"
+            ]
+        },
+        {
+            "id": 79,
+            "name": "Eggplant",
+            "price": "$16.32",
+            "image": "/eggplant.png",
+            "catsName": [
+                "Vegetables",
+                "Cooking"
+            ]
+        },
+        {
+            "id": 80,
+            "name": "Fresh Cauliflower",
+            "price": "$25.32",
+            "image": "/caucliflower.png",
+            "catsName": [
+                "Vegetables",
+                "Cooking"
+            ]
+        },
+        {
+            "id": 81,
+            "name": "Green Apple",
+            "price": "$62.32",
+            "image": "/greenapple.png",
+            "catsName": "Fresh Fruit"
+        },
+        {
+            "id": 82,
+            "name": "Green Capsicum",
+            "price": "$52.32",
+            "image": "/capsicum.png",
+            "catsName": [
+                "Vegetables",
+                "Cooking"
+            ]
+        },
+        {
+            "id": 83,
+            "name": "Green Chili",
+            "price": "$12.32",
+            "image": "/greenchili.png",
+            "catsName": "Vegetables"
+        },
+        {
+            "id": 84,
+            "name": "Green Cucumber",
+            "price": "$92.32",
+            "image": "/cucumber.png",
+            "catsName": [
+                "Vegetables",
+                "Cooking"
+            ]
+        },
+        {
+            "id": 85,
+            "name": "Green Littuce",
+            "price": "$22.32",
+            "image": "/littuce.png",
+            "catsName": [
+                "Vegetables",
+                "Cooking"
+            ]
+        },
+        {
+            "id": 86,
+            "name": "Ladies Finger",
+            "price": "$46.32",
+            "image": "/ladyfinger.png",
+            "catsName": [
+                "Vegetables",
+                "Cooking"
+            ]
+        },
+        {
+            "id": 87,
+            "name": "Green Capsicum",
+            "price": "$13.32",
+            "image": "/capsicum.png",
+            "catsName": [
+                "Vegetables",
+                "cooking"
+            ]
+        },
+        {
+            "id": 88,
+            "name": "Red Chili",
+            "price": "$89.32",
+            "image": "/redchili.png",
+            "catsName": "Vegetables"
+        },
+        {
+            "id": 89,
+            "name": "Red Tomato",
+            "price": "$10.32",
+            "image": "/tomato.png",
+            "catsName": "Fresh Fruit"
+        },
+        {
+            "id": 90,
+            "name": "Fresh Mango",
+            "price": "$1.32",
+            "image": "/mango.png",
+            "catsName": "Fresh Fruit"
         }
+    ],
+    "service": [
+        {
+            "id": 1,
+            "title": "Free Shipping",
+            "desc": "Free shipping with discount",
+            "img": "/shipping.png"
+        },
+        {
+            "id": 2,
+            "title": "Great Support 24/7",
+            "desc": "Instant access to Contact",
+            "img": "/headphones.png"
+                },
+        {
+            "id": 3,
+            "title": "100% Secure Payment",
+            "desc": "We ensure your money is safe",
+            "img": "/shopping-bag.png"
+                },
+        {
+            "id": 4,
+            "title": "Money-Back Guarantee",
+            "desc": "30 days money-back",
+            "img": "/package.png"
+        },
+        {
+            "id": 5,
+            "title": "Money-Back Guarantee",
+            "desc": "30 days money-back",
+            "img": "/package.png"
+        },
+        {
+            "id": 6,
+            "title": "100% Secure Payment",
+            "desc": "We ensure your money is safe",
+            "img": "/shopping-bag.png"
+                }
     ]
 }

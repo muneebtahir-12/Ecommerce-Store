@@ -2,10 +2,9 @@
 import { useState } from "react";
 import data from "../../components/data/data"
 import PrdCard from "./SideProductsCard"
-export default function Details({ category}) {
+export default function Details({ category }) {
 
     const [selectedCategory, setSelectedCategory] = useState(category?.id || null);
-
     const handleChange = (id) => {
         setSelectedCategory(id);
     };
@@ -26,7 +25,7 @@ export default function Details({ category}) {
                     </label>
                 ))}
             </div>
-
+            <div>{selectedCategory}</div>
             <div className="flex flex-col gap-2 border-b border-b-[#E6E6E6] py-5">
                 <h3 className="text-[#1A1A1A] mb-3 font-poppins text-[20px] font-medium leading-[150%]">Price</h3>
                 <input type="range" min={50} max={1500} value={maxPrice}
@@ -40,7 +39,7 @@ export default function Details({ category}) {
             </div>
 
             <div className="flex flex-col border-b border-b-[#E6E6E6] py-5">
-                <h3 className="text-[#1A1A1A] mt-3 mb-3 font-poppins text-[20px] font-medium leading-[150%]">Price</h3>
+                <h3 className="text-[#1A1A1A] mt-3 mb-3 font-poppins text-[20px] font-medium leading-[150%]">Rating</h3>
                 <div className="flex gap-1">
                     <input type="checkbox" name="rating" id="rating" />
                     <img src="/yellowstar.png" alt="star" className="w-[18px] h-[18px]" />

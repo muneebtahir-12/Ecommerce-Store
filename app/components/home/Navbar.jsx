@@ -11,7 +11,7 @@ export default function Home() {
 const {count}=useContext(CounterContext);
     return (
         <>
-            <div className="flex flex-col mt-6 sm:ml-9 gap-2 ml-5 mr-5 sm:mr-9">
+            <div className="flex flex-col mt-6 sm:ml-9 gap-2 ml-5 mr-5 sm:mr-9-15">
                 {/* --- Top Bar (Remains same) --- */}
                 <div className="flex flex-col gap-3 sm:gap-0 sm:flex-row justify-between">
                     <div className="flex items-center gap-[3px]">
@@ -74,9 +74,8 @@ const {count}=useContext(CounterContext);
 
                     {/* Desktop Menu (lg+) */}
                     <div className="bg-[black] lg:flex items-center justify-between hidden w-full px-5 py-3">
-                        <ul className="flex gap-10 text-white font-poppins">
+                        <ul className="flex gap-10 text-white font-poppins ml-4">
                             <Link href="/">Home</Link>
-                           
                             <Link href="/blog">Blog</Link>
                             <Link href="/about">About</Link>
                             <Link href="/contact">Contact</Link>
