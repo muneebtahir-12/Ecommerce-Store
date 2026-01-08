@@ -1,11 +1,19 @@
 "use client";
 
+import Link from "next/link";
 import { useState, useEffect, useContext } from "react";
 import Check from "./Check";
 import { WishlistContext } from "../../context/WishlistContext";
 import { CartContext } from "../../context/CartContext";
 import { CounterContext } from "../../context/CounterContext";
-
+import Categories from "../../components/home/Categories";
+function slugify(text) {
+  return text
+    .toLowerCase()
+    .trim()
+    .replace(/[\s\u00A0\u200B\u200C\u200D]+/g, "-") 
+    .replace(/[^\w-]+/g, "");
+}
 export default function Card({ id, name, image, price, catName }) {
     const [heartClicked, setHeartClicked] = useState(false);
     const [eyeClicked, setEyeClicked] = useState(false);
@@ -27,7 +35,6 @@ export default function Card({ id, name, image, price, catName }) {
     };
 }, [eyeClicked]);
 
-
     const product = { id, name, image, price: parseFloat(price.toString().replace('$', '')), catName };
 
     // Check if this product is already in cart
@@ -47,11 +54,13 @@ export default function Card({ id, name, image, price, catName }) {
             decrement();
         }
     };
-
+    const vege=slugify(product.name)
     return (
+
         <>
-            <div className="group relative flex flex-col hover:shadow-[0_0_12px_rgba(32,181,38,0.32)] border rounded-[8px] border-[#E6E6E6] bg-[#FFFFFF]">
-                <img src={image} alt={name} className="w-full h-auto sm:h-[280px] md:h-[70px] lg:h-[250px] rounded-t-[8px]" />
+        
+            <div className="group relative flex flex-col h-[350px] hover:shadow-[0_0_12px_rgba(32,181,38,0.32)] border rounded-[8px] border-[#E6E6E6] bg-[#FFFFFF]">
+                <Link href={`/categories/${catName}/${vege}`}><img src={image} alt={name} className="w-full h-auto sm:h-[280px] md:h-[200px] lg:h-[230px] rounded-t-[8px]" /></Link>
 
                 <div className="absolute top-5 right-4 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition">
                     {/* Wishlist */}
@@ -87,15 +96,15 @@ export default function Card({ id, name, image, price, catName }) {
             </div>
 
             {eyeClicked && (
-                <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50 px-2">
-                    <div className="bg-white rounded-[12px] shadow-lg relative w-full md:h-auto lg:h-auto xl:h-auto max-h-[95vh]">
+                <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50 px-4 sm:px-15 lg:px-52">
+                    <div className="bg-white rounded-[12px] shadow-lg relative w-full md:h-auto lg:h-auto xl:h-auto">
                         <button
                             onClick={() => setEyeClicked(false)}
                             className="absolute top-3 right-3 text-black text-xl font-bold hover:text-[#00B207] z-10"
                         >
                             ✖
                         </button>
-                        <div className="p-4 sm:p-6 overflow-y-auto max-h-[95vh]">
+                        <div className="p-4 sm:p-10 overflow-y-auto  max-h-[80vh]">
                             <Check product={product} />
                         </div>
                     </div>

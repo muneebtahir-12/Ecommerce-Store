@@ -1,5 +1,5 @@
-import Card from "../../ProductCard"
-import data from "../../components/data/data"
+import Card from "../ProductCard"
+import data from "../../../components/data/data"
 export default function Products() {
     const prds = data.details.slice(0, 4);
     return (

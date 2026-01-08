@@ -2,7 +2,7 @@
 import { useState } from "react";
 import About from "./About";
 import Products from "./Products";
-import data from "../../components/data/data";
+import data from "../../../components/data/data";
 import FeedbackCard from "./FeedbackCard";
 export default function Details() {
     const comment = data.comments;

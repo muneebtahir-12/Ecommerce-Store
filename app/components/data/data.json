@@ -447,7 +447,7 @@
             "name": "Big Potatos",
             "price": "$12.32",
             "image": "/potato.png",
-            "catsName": [
+            "cat": [
                 "Vegetables",
                 "Cooking"
             ]
@@ -457,7 +457,7 @@
             "name": "Chanise Cabbage",
             "price": "$122.32",
             "image": "/cabbage.png",
-            "catsName": [
+            "cat": [
                 "Vegetables",
                 "Cooking"
             ]
@@ -467,7 +467,7 @@
             "name": "Ladies Finger",
             "price": "$11.32",
             "image": "/ladiesfinger.png",
-            "catsName": [
+            "cat": [
                 "Vegetables",
                 "Cooking"
             ]
@@ -477,7 +477,7 @@
             "name": "Eggplant",
             "price": "$16.32",
             "image": "/eggplant.png",
-            "catsName": [
+            "cat": [
                 "Vegetables",
                 "Cooking"
             ]
@@ -487,7 +487,7 @@
             "name": "Fresh Cauliflower",
             "price": "$25.32",
             "image": "/caucliflower.png",
-            "catsName": [
+            "cat": [
                 "Vegetables",
                 "Cooking"
             ]
@@ -497,14 +497,14 @@
             "name": "Green Apple",
             "price": "$62.32",
             "image": "/greenapple.png",
-            "catsName": "Fresh Fruit"
+            "cat": "Fresh Fruit"
         },
         {
             "id": 82,
             "name": "Green Capsicum",
             "price": "$52.32",
             "image": "/capsicum.png",
-            "catsName": [
+            "cat": [
                 "Vegetables",
                 "Cooking"
             ]
@@ -514,14 +514,14 @@
             "name": "Green Chili",
             "price": "$12.32",
             "image": "/greenchili.png",
-            "catsName": "Vegetables"
+            "cat": "Vegetables"
         },
         {
             "id": 84,
             "name": "Green Cucumber",
             "price": "$92.32",
             "image": "/cucumber.png",
-            "catsName": [
+            "cat": [
                 "Vegetables",
                 "Cooking"
             ]
@@ -531,7 +531,7 @@
             "name": "Green Littuce",
             "price": "$22.32",
             "image": "/littuce.png",
-            "catsName": [
+            "cat": [
                 "Vegetables",
                 "Cooking"
             ]
@@ -541,7 +541,7 @@
             "name": "Ladies Finger",
             "price": "$46.32",
             "image": "/ladyfinger.png",
-            "catsName": [
+            "cat": [
                 "Vegetables",
                 "Cooking"
             ]
@@ -551,31 +551,28 @@
             "name": "Green Capsicum",
             "price": "$13.32",
             "image": "/capsicum.png",
-            "catsName": [
-                "Vegetables",
-                "cooking"
-            ]
+            "cat": ["Vegetables","cooking"]
         },
         {
             "id": 88,
             "name": "Red Chili",
             "price": "$89.32",
             "image": "/redchili.png",
-            "catsName": "Vegetables"
+            "cat": "Fresh Fruit"
         },
         {
             "id": 89,
             "name": "Red Tomato",
             "price": "$10.32",
             "image": "/tomato.png",
-            "catsName": "Fresh Fruit"
+            "cat": "Fresh Fruit"
         },
         {
             "id": 90,
             "name": "Fresh Mango",
             "price": "$1.32",
             "image": "/mango.png",
-            "catsName": "Fresh Fruit"
+            "cat": "Fresh Fruit"
         }
     ],
     "service": [
