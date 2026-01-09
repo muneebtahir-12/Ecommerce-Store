@@ -3,13 +3,15 @@ import { useContext, useState, useEffect } from "react"
 import { CartContext } from "../../../context/CartContext"
 import { WishlistContext } from "../../../context/WishlistContext"
 import { CounterContext } from "../../../context/CounterContext"
-export default function Check({ product }) {
+export default function Check({ product, category }) {
     const { cartItems, addToCart, removeFromCart } = useContext(CartContext);
     const { wishlist, addToWishlist, removeWishlistItem } = useContext(WishlistContext);
     const { increment, decrement } = useContext(CounterContext);
 
-    const isInCart = cartItems.some((item) => item.id === product.id);
-    const isInWishlist = wishlist.some((item) => item.id === product.id);
+    const isInCart = cartItems.some((item) => item.id === product?.id);
+    const isInWishlist = wishlist.some((item) => item.id === product?.id);
+    
+    const productData = product ? { ...product, catName: category?.name || product.cat?.[0] } : null;
 
     const [counter,setCounter]=useState(1);
     const Increment = () => {
@@ -24,22 +26,24 @@ export default function Check({ product }) {
 
     // 🛒 Cart handler
     const handleCartClick = () => {
+        if (!productData) return;
         if (isInCart) {
-            removeFromCart(product.id); // ✅ CORRECT
+            removeFromCart(productData.id);
             decrement();
         } else {
-            addToCart(product);
-            increment();
+            addToCart(productData);
+            increment(); // Only increment counter when adding NEW item
         }
     };
 
 
     // ❤️ Wishlist handler
     const handleWishlistClick = () => {
+        if (!productData) return;
         if (isInWishlist) {
-            removeWishlistItem(product.id);
+            removeWishlistItem(productData.id);
         } else {
-            addToWishlist(product);
+            addToWishlist(productData);
         }
     };
 
@@ -54,12 +58,12 @@ export default function Check({ product }) {
             </div>
 
             <div>
-                <img src="/ladyfinger.png" alt="" className="lg:w-[556px] lg:h-[556px]" />
+                <img src={product?.image || "/ladyfinger.png"} alt={product?.name} className="lg:w-[556px] lg:h-[400px]" />
             </div>
 
             <div className="flex flex-col gap-5">
                 <div className="flex flex-col sm:flex-row gap-2">
-                    <h2 className="text-[#1A1A1A] font-poppins text-[36px] font-semibold leading-[120%]">Name</h2>
+                    <h2 className="text-[#1A1A1A] font-poppins text-[36px] font-semibold leading-[120%]">{product?.name || 'Product'}</h2>
                     <div className="rounded-[4px] bg-[rgba(32,181,38,0.20)] flex items-center justify-center px-[4px] py-[8px]"><span className="text-[#2C742F] font-poppins text-[14px] font-normal leading-[150%]">In Stock</span></div>
                 </div>
 
@@ -78,7 +82,7 @@ export default function Check({ product }) {
 
                 <div className="flex gap-2 items-center">
                     <span className="text-[#B3B3B3] font-poppins text-[20px] font-normal leading-[150%] line-through">$48.00</span>
-                    <span className="text-[#2C742F] font-poppins text-[24px] font-medium leading-[150%]">11</span>
+                    <span className="text-[#2C742F] font-poppins text-[24px] font-medium leading-[150%]">{product?.price || '$0'}</span>
                     <div className="rounded-[30px] bg-[rgba(234,75,72,0.10)] px-[10px] py-[5px] flex items-center">
                         <p className="text-[#EA4B48] font-poppins text-[14px] font-medium leading-[150%]">64% Off</p>
                     </div>
@@ -132,7 +136,9 @@ export default function Check({ product }) {
 
                 <hr className="border-t border-[#F2F2F2]" />
 
-                <p className="text-[#1A1A1A] font-poppins text-[14px] font-semibold leading-[150%]">Category: <span className="text-[#808080] font-medium"></span></p>
+                <p className="text-[#1A1A1A] font-poppins text-[14px] font-semibold leading-[150%]">Category: <span className="text-[#808080] font-medium">
+                    <Link href={`/categories/${category?.name?.toLowerCase().trim().replace(/\s+/g, "-").replace(/[^\w-]+/g, "")}`} className="underline">{productData?.catName || 'Category'}</Link>
+                </span></p>
                 <p className="text-[#1A1A1A] font-poppins text-[14px] font-semibold leading-[150%]">Tag : <span className="text-[#808080] font-medium"> Vegetables Healthy </span></p>
             </div>
 

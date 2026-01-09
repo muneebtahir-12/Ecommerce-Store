@@ -15,7 +15,8 @@ export default function SpecialProducts() {
                             id={item.id} 
                             name={item.name} 
                             price={item.price} 
-                            image={item.image} 
+                            image={item.image}
+                            cat={item.cat}
                         />
                     ))}
                 </div>

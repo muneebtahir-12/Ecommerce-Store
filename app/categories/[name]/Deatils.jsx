@@ -1,12 +1,21 @@
 "use client"
 import { useState } from "react";
+import Link from "next/link";
 import data from "../../components/data/data"
 import PrdCard from "./SideProductsCard"
-export default function Details({ category }) {
 
-    const [selectedCategory, setSelectedCategory] = useState(category?.id || null);
+function slugify(text) {
+  return text
+    .toLowerCase()
+    .trim()
+    .replace(/[\s\u00A0\u200B\u200C\u200D]+/g, "-")
+    .replace(/[^\w-]+/g, "");
+}
+
+export default function Details({ category, selectedCategory, onCategoryChange }) {
+
     const handleChange = (id) => {
-        setSelectedCategory(id);
+        onCategoryChange(id);
     };
     const [minPrice, setMinPrice] = useState(50);
     const [maxPrice, setMaxPrice] = useState(1500);
@@ -16,16 +25,22 @@ export default function Details({ category }) {
         <section className="mb-24 w-full lg:w-[350px] ">
             <div className="flex flex-col gap-3">
                 {data.types.map((cat) => (
-                    <label key={cat.id} className="flex items-center gap-2 cursor-pointer">
-                        <input type="radio" name="category" value={cat.id} checked={selectedCategory === cat.id} onChange={() => handleChange(cat.id)} className="accent-[#00B207]" />
-                        <span className="flex gap-1">
-                            <span className="text-[#1A1A1A] font-poppins text-[14px] font-normal leading-[21px]"> {cat.name}</span>
-                            <span className="text-[#808080] font-poppins text-[14px] font-normal leading-[21px]">({cat.count.trim()})</span>
-                        </span>
-                    </label>
+                    <Link key={cat.id} href={`/categories/${slugify(cat.name)}`}>
+                        <label className="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="category" value={cat.id} checked={selectedCategory === cat.id} onChange={() => handleChange(cat.id)} className="accent-[#00B207]" />
+                            <span className="flex gap-1">
+                                <span className="text-[#1A1A1A] font-poppins text-[14px] font-normal leading-[21px]">
+                                    {cat.name}
+                                </span>
+                                <span className="text-[#808080] font-poppins text-[14px] font-normal leading-[21px]">({cat.count.trim()})</span>
+                            </span>
+                        </label>
+                    </Link>
                 ))}
             </div>
-            <div>{selectedCategory}</div>
+
+        
+
             <div className="flex flex-col gap-2 border-b border-b-[#E6E6E6] py-5">
                 <h3 className="text-[#1A1A1A] mb-3 font-poppins text-[20px] font-medium leading-[150%]">Price</h3>
                 <input type="range" min={50} max={1500} value={maxPrice}

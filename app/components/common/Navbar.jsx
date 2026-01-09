@@ -1,12 +1,18 @@
 "use client";
-import { useState,useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import Link from "next/link";
-import { CounterContext } from "../../context/CounterContext";
+import { CartContext } from "../../context/CartContext";
 export default function Home() {
     const [isOpen, setIsOpen] = useState(false);
+    const [cartCount, setCartCount] = useState(0);
 
     const toggleMenu = () => setIsOpen(!isOpen);
-    const { count } = useContext(CounterContext);
+    const { cartItems } = useContext(CartContext);
+
+    // Load cart count from localStorage on mount and update when cartItems changes
+    useEffect(() => {
+        setCartCount(cartItems.length);
+    }, [cartItems]);
 
     return (
         <>
@@ -62,7 +68,7 @@ export default function Home() {
                         <div className="flex items-center gap-1">
                             <Link href={"/cart"} className="relative w-fit">
                                 <img src="/Bag2.png" alt="cart" className="w-[30px] h-[30px] md:w-[34px] md:h-[34px]" />
-                                <span className="absolute -top-1 -right-1 bg-[#00B207] text-white text-[10px] w-[18px] h-[18px] flex items-center justify-center rounded-full font-semibold">{count}</span>
+                                <span className="absolute -top-1 -right-1 bg-[#00B207] text-white text-[10px] w-[18px] h-[18px] flex items-center justify-center rounded-full font-semibold">{cartCount}</span>
                             </Link>
                         </div>
                     </div>

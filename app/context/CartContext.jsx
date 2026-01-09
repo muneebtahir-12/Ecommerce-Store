@@ -1,9 +1,35 @@
 "use client";
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 export const CartContext = createContext();
+
+const getInitialCart = () => {
+  if (typeof window === "undefined") return [];
+  try {
+    const stored = localStorage.getItem("cart");
+    return stored ? JSON.parse(stored) : [];
+  } catch (e) {
+    console.error("Failed to load cart", e);
+    return [];
+  }
+};
 
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  // Load cart from localStorage on mount
+  useEffect(() => {
+    const initialCart = getInitialCart();
+    setCartItems(initialCart);
+    setIsLoaded(true);
+  }, []);
+
+  // Save cart to localStorage whenever it changes
+  useEffect(() => {
+    if (isLoaded && typeof window !== "undefined") {
+      localStorage.setItem("cart", JSON.stringify(cartItems));
+    }
+  }, [cartItems, isLoaded]);
 
   const addToCart = (product) => {
     // Check if product already exists
@@ -31,17 +57,14 @@ export const CartProvider = ({ children }) => {
       )
     );
   };
-  // In CartContext.js
-const clearCart = () => {
-  setCartItems([]); // empties the cart
 
-};
+  const clearCart = () => {
+    setCartItems([]);
+  };
 
   return (
-    <>
-    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, updateQuantity,clearCart }}>
+    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, updateQuantity, clearCart }}>
       {children}
     </CartContext.Provider>
-    </>
   );
 };

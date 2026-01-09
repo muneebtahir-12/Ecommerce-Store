@@ -1,9 +1,12 @@
 "use client"
 import { useState } from "react";
+import Link from "next/link";
+import { useParams } from "next/navigation";
 import About from "./About";
 import Products from "./Products";
 import data from "../../../components/data/data";
 import FeedbackCard from "./FeedbackCard";
+function slugify(text) { return text.toLowerCase().trim().replace(/[\s\u00A0\u200B\u200C\u200D]+/g, "-").replace(/[^\w-]+/g, ""); }
 export default function Details() {
     const comment = data.comments;
 
@@ -91,7 +94,7 @@ export default function Details() {
                         </div>
                         <div className="flex gap-8">
                             <span className="text-[#1A1A1A] font-poppins text-[14px] font-normal leading-[150%]">Category:</span>
-                            <span className="text-[#666666] font-poppins text-[14px] font-normal leading-[150%]">Vegetables</span>
+                            <span className="text-[#666666] font-poppins text-[14px] font-normal leading-[150%]"><Link href={`/categories/${useParams().name}`}>View all in this category</Link></span>
                         </div>
                         <div className="flex gap-8">
                             <span className="text-[#1A1A1A] font-poppins text-[14px] font-normal leading-[150%]">Stock Status:</span>

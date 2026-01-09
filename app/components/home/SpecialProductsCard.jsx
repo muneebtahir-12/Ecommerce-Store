@@ -5,7 +5,7 @@ import { WishlistContext } from "../../context/WishlistContext";
 import { CounterContext } from "../../context/CounterContext";
 import Check from "../../categories/[name]/Check";
 
-export default function SpecialProductsCard({ id, name, price, image }) {
+export default function SpecialProductsCard({ id, name, price, image, cat }) {
     const { cartItems, addToCart, removeFromCart } = useContext(CartContext);
     const { wishlist, addToWishlist, removeWishlistItem } = useContext(WishlistContext);
     const { increment, decrement } = useContext(CounterContext);
@@ -20,6 +20,7 @@ export default function SpecialProductsCard({ id, name, price, image }) {
         name,
         image,
         price: parseFloat(price.toString().replace("$", "")),
+        catName: cat?.[0] || "Vegetables",
     };
 
     // Lock scroll when modal opens
@@ -34,7 +35,7 @@ export default function SpecialProductsCard({ id, name, price, image }) {
             decrement();
         } else {
             addToCart(product);
-            increment();
+            increment(); // Only increment counter when adding NEW item
         }
     };
 
@@ -99,19 +100,21 @@ export default function SpecialProductsCard({ id, name, price, image }) {
             </div>
 
             {/* Modal */}
-            {eyeClicked && (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-2">
-        <div className="bg-white rounded-xl relative w-full max-w-6xl max-h-[90vh] p-6 overflow-y-auto">
-            <button 
-                onClick={() => setEyeClicked(false)} 
-                className="absolute top-3 right-3 text-xl font-bold"
-            >
-                ✖
-            </button>
-            <Check product={product} />
-        </div>
-    </div>
-)}
+          {eyeClicked && (
+                          <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50 px-4 sm:px-15 lg:px-52">
+                              <div className="bg-white rounded-[12px] shadow-lg relative w-full md:h-auto lg:h-auto xl:h-auto">
+                                  <button
+                                      onClick={() => setEyeClicked(false)}
+                                      className="absolute top-3 right-3 text-black text-xl font-bold hover:text-[#00B207] z-10"
+                                  >
+                                      ✖
+                                  </button>
+                                  <div className="p-4 sm:p-10 overflow-y-auto  max-h-[80vh]">
+                                      <Check product={product} />
+                                  </div>
+                              </div>
+                          </div>
+                      )}
 
         </>
     );

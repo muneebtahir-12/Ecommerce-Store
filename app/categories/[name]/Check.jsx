@@ -21,7 +21,6 @@ export default function Check({ product }) {
         }
     }
 
-
     // 🛒 Cart handler
     const handleCartClick = () => {
         if (isInCart) {
@@ -33,7 +32,6 @@ export default function Check({ product }) {
         }
     };
 
-
     // ❤️ Wishlist handler
     const handleWishlistClick = () => {
         if (isInWishlist) {
@@ -44,8 +42,8 @@ export default function Check({ product }) {
     };
 
     return (
-        <section className="flex flex-col lg:flex-row justify-between">
-           <div className="flex flex-col lg:flex-row items-center lg:w-[800px]">
+        <section className="flex flex-col lg:flex-row items-center ">
+           <div className="flex flex-col lg:flex-row items-center lg:w-[700px]">
              <div className="flex lg:flex-col flex-wrap">
                 <img src="/cabbage.png" alt="" className="w-[100px] h-[70px]" />
                 <img src="/cabbage2.png" alt="" className="w-[100px] h-[70px]" />
@@ -54,11 +52,11 @@ export default function Check({ product }) {
             </div>
 
             
-                <img src={product.image} alt="" className="lg:w-[400px] lg:h-[300px]" />
+                <img src={product.image} alt="" className="lg:w-[400px] lg:h-[300px]x" />
 
            </div>
 
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-3 lg:w-[1000px]">
                 <div className="flex flex-col sm:flex-row gap-1">
                     <h2 className="text-[#1A1A1A] font-poppins text-[30px] font-semibold leading-[120%]">{product.name}</h2>
                     <div className="rounded-[4px] bg-[rgba(32,181,38,0.20)] flex items-center justify-center px-[7px] py-[3px]"><span className="text-[#2C742F] font-poppins text-[12px] font-normal leading-[150%]">In Stock</span></div>
@@ -133,7 +131,13 @@ export default function Check({ product }) {
 
                 <hr className="border-t border-[#F2F2F2]" />
 
-                <p className="text-[#1A1A1A] font-poppins text-[14px] font-semibold leading-[150%]">Category: <span className="text-[#808080] font-medium">{product.catName}</span></p>
+                <p className="text-[#1A1A1A] font-poppins text-[14px] font-semibold leading-[150%]">
+                    Category: <span className="text-[#808080] font-medium">
+                        <Link href={`/categories/${product.catName.toLowerCase().trim().replace(/\s+/g, "-").replace(/[^\w-]+/g, "")}`} className="underline">
+                            {product.catName}
+                        </Link>
+                    </span>
+                </p>
                 <p className="text-[#1A1A1A] font-poppins text-[14px] font-semibold leading-[150%]">Tag : <span className="text-[#808080] font-medium"> Vegetables Healthy  {product.name} </span></p>
             </div>
 

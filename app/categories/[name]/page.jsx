@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import data from "../../components/data/data.json";
 import { useParams } from "next/navigation";
 import Navbar from "../../components/common/Navbar";
@@ -19,13 +20,15 @@ function slugify(text) {
 export default function TypePage() {
   const { name } = useParams();
   const category = data.types.find((c) => slugify(c.name) === name);
+  const [selectedCategory, setSelectedCategory] = useState(category?.id || null);
+
   return (
     <>
       <Navbar />
       <Top category={category} />
       <div className="flex mb-10 sm:mr-29 mt-12 mr-5 flex-col gap-5 ml-5 sm:ml-29 lg:flex-row">
-        <Details category={category} />
-        <AllProducts category={category} />
+        <Details category={category} selectedCategory={selectedCategory} onCategoryChange={setSelectedCategory} />
+        <AllProducts category={category} selectedCategory={selectedCategory} />
       </div>
       <Footer />
     </>

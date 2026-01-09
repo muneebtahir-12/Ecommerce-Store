@@ -18,7 +18,7 @@ export default function Card({ id, name, image, price, catName }) {
     const [heartClicked, setHeartClicked] = useState(false);
     const [eyeClicked, setEyeClicked] = useState(false);
 
-    const { addToWishlist } = useContext(WishlistContext);
+    const { addToWishlist, removeWishlistItem, wishlist } = useContext(WishlistContext);
     const { cartItems, addToCart, removeFromCart } = useContext(CartContext);
     const { increment, decrement } = useContext(CounterContext);
 
@@ -39,16 +39,22 @@ export default function Card({ id, name, image, price, catName }) {
 
     // Check if this product is already in cart
     const isInCart = cartItems.some((item) => item.id === id);
+    const isInWishlist = wishlist.some((item) => item.id === id);
 
     const handleWishlist = () => {
-        setHeartClicked(!heartClicked);
-        addToWishlist(product);
+        if (isInWishlist) {
+            removeWishlistItem(id);
+            setHeartClicked(false);
+        } else {
+            addToWishlist(product);
+            setHeartClicked(true);
+        }
     };
 
     const handleCart = () => {
         if (!isInCart) {
             addToCart(product);
-            increment();
+            increment(); // Only increment counter when adding NEW item
         } else {
             removeFromCart(product.id);
             decrement();

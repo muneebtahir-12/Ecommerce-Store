@@ -1,11 +1,14 @@
 import Card from "./ProductCard";
 import data from "../../components/data/data";
 
-export default function AllProducts({ category }) {
+export default function AllProducts({ category, selectedCategory }) {
   const prds = data.details;
+  
+  // Get the selected category object
+  const catToFilter = selectedCategory ? data.types.find(t => t.id === selectedCategory) : category;
 
-  // 🔹 Filter products for the current category
-const filteredProducts = prds.filter(p => p.cat.includes(category.name));
+  // 🔹 Filter products for the selected category
+  const filteredProducts = prds.filter(p => p.cat.includes(catToFilter?.name));
 
   return (
     <>
@@ -13,7 +16,7 @@ const filteredProducts = prds.filter(p => p.cat.includes(category.name));
         {filteredProducts.map((p) => (
           <Card
             id={p.id}
-            catName={category.name}
+            catName={catToFilter?.name}
             key={p.id}
             name={p.name}
             price={p.price}
